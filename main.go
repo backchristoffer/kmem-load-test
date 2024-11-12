@@ -20,7 +20,7 @@ func randomToken() string {
 }
 
 // will create a new file in /tmp with prefix d1_TIMESTAMP with a random value in each file
-func writeFile() {
+func writeFile(osDir string) {
 	token := randomToken()
 
 	if token == "" {
@@ -28,7 +28,7 @@ func writeFile() {
 		return
 	}
 
-	filename := fmt.Sprintf("/tmp/d1_%d", time.Now().UnixNano())
+	filename := fmt.Sprintf("%s/d1_%d", osDir, time.Now().UnixNano())
 
 	err := os.WriteFile(filename, []byte(token), 0644)
 	if err != nil {
@@ -39,5 +39,5 @@ func writeFile() {
 }
 
 func main() {
-	writeFile()
+	writeFile("/tmp")
 }
