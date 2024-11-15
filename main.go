@@ -41,6 +41,7 @@ func writeFile(osDir string) (string, error) {
 	return filename, nil
 }
 
+// handler for creating files with api endpoint
 func api_createfile(c *gin.Context) {
 	filename, err := writeFile("/tmp")
 	if err != nil {
