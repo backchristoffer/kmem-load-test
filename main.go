@@ -54,5 +54,4 @@ func main() {
 	route := gin.Default()
 	route.GET("/file", api_createfile)
 	route.Run(":8080")
-	fmt.Println("Starting server on 8080")
 }
