@@ -24,6 +24,6 @@ jobs:
     - name: Build the Docker image and push to github
       run: docker build . --file Containerfile --tag kmem-load-test:latest
     - name: Tag image
-      run: docker image tag iplink:latest ghcr.io/backchristoffer/kmem-load-test:latest
+      run: docker image tag kmem-load-test:latest ghcr.io/backchristoffer/kmem-load-test:latest
     - name: Push image to github
       run: docker image push ghcr.io/backchristoffer/kmem-load-test:latest
